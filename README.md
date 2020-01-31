@@ -8,7 +8,7 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 > Application URL: http://18.194.41.215/main/  
 
 1)Creating new user named grader and giving it the permission to sudo  
-Run `sudo adduser grader to create a new user named grader`  
+Run `sudo adduser grader` to create a new user named grader  
 Create a new file in the sudoers directory with `sudo nano /etc/sudoers.d/grader`  
 Add the following text `grader ALL=(ALL:ALL) ALL`  
 Make folder using ```mkdir /home/grader/.ssh```  
