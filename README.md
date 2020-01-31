@@ -8,9 +8,9 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 > Application URL: http://18.194.41.215/main/  
 
 1)Creating new user named grader and giving it the permission to sudo  
-Run $ sudo adduser grader to create a new user named grader  
-Create a new file in the sudoers directory with sudo nano /etc/sudoers.d/grader  
-Add the following text grader ALL=(ALL:ALL) ALL  
+Run `sudo adduser grader to create a new user named grader`  
+Create a new file in the sudoers directory with `sudo nano /etc/sudoers.d/grader`  
+Add the following text `grader ALL=(ALL:ALL) ALL`  
 Make folder using ```mkdir /home/grader/.ssh```  
 Copy the public key to /home/grader/.ssh/authorized_keys with `sudo nano /home/grader/.ssh/authorized_keys`  
 Disable ssh login for root user  
@@ -73,54 +73,4 @@ Change permissions `sudo chmod -R 777 venv`
 
 11)Install Flask and other dependencies  
 Install pip with `sudo apt-get install python-pip`  
-Install Flask `sudo pip install Flask`  
-Install other project dependencies `sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlalchemy_utils`  
-Update path of client_secrets.json file  
-`nano __init__.py`  
-Change client_secrets.json path to /var/www/catalog/catalog/client_secret.json  
-
-12)Configure and enable a new virtual host  
-Run this: `sudo nano /etc/apache2/sites-available/catalog.conf`  
-Paste this code:  
-```<VirtualHost *:80>  
-    ServerName 18.194.41.215  
-    ServerAdmin ubuntu@18.194.41.215  
-    WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/venv/lib/python2.7/site-packages  
-    WSGIProcessGroup catalog  
-    WSGIScriptAlias / /var/www/catalog/catalog.wsgi  
-    <Directory /var/www/catalog/catalog/>  
-        Order allow,deny  
-        Allow from all  
-    </Directory>  
-    Alias /static /var/www/catalog/catalog/static  
-    <Directory /var/www/catalog/catalog/static/>  
-        Order allow,deny  
-        Allow from all  
-    </Directory>  
-    ErrorLog ${APACHE_LOG_DIR}/error.log  
-    LogLevel warn  
-    CustomLog ${APACHE_LOG_DIR}/access.log combined  
-</VirtualHost>  
-```
-Enable the virtual host sudo a2ensite catalog  
-  
-13)Install and configure PostgreSQL  
-`sudo apt-get install libpq-dev python-dev`  
-`sudo apt-get install postgresql postgresql-contrib`  
-`sudo su - postgres`  
-`psql`  
-`CREATE USER catalog WITH PASSWORD 'hoba';`  
-`ALTER USER catalog CREATEDB;`  
-`CREATE DATABASE catalog WITH OWNER catalog;`  
-`\c catalog`  
-`REVOKE ALL ON SCHEMA public FROM public;`  
-`GRANT ALL ON SCHEMA public TO catalog;`  
-`\q`  
-`exit`  
-  
-14)Change create engine line in your __init__.py and database_setup.py to:   
-`engine = create_engine('postgresql://catalog:hoba@localhost/catalog')`  
-`python /var/www/catalog/catalog/database_setup.py`  
-
-15)Restart Apache  
-`sudo service apache2 restart`  
+Install Flask `sudo pip install 
