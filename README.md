@@ -1,7 +1,7 @@
 Linux Server Configuration
 
 Project Description
-Take a baseline installation of a Linux distribution on a virtual machine and prepare it to host your web applications, to include installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.
+Take a baseline installation of a Linux distribution on a virtual machine and prepare it to host the web applications, to include installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.
 
 > IP address: 18.194.41.215  
 > Accessible SSH port: 2200  
