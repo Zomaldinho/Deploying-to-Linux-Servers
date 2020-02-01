@@ -73,4 +73,12 @@ Change permissions `sudo chmod -R 777 venv`
 
 11)Install Flask and other dependencies  
 Install pip with `sudo apt-get install python-pip`  
-Install Flask `sudo pip install 
+Install Flask `sudo pip install`
+  
+Third-Party Resources  
+  
+https://www.networkworld.com/article/2726217/how-to-enforce-password-complexity-on-linux.html  
+https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps  
+https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps  
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps  
+https://blog.udacity.com/2015/03/step-by-step-guide-install-lamp-linux-apache-mysql-python-ubuntu.html
